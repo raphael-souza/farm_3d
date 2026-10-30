@@ -7,4 +7,5 @@ export interface ProductRepository {
     salePrice: string;
   }): Promise<Product>;
   findAll(): Promise<Product[]>;
+  findById(id: string): Promise<Product | null>;
 }

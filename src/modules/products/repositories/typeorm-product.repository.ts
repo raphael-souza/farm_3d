@@ -25,4 +25,13 @@ export class TypeOrmProductRepository implements ProductRepository {
 
     return product;
   }
+
+  async findAll(): Promise<Product[]> {
+    return this.repository.find();
+  }
+
+  async findById(id: string): Promise<Product | null> {
+    const product = await this.repository.findOneBy({ id });
+    return product || null;
+  }
 }

@@ -1,0 +1,6 @@
+$kind: http-request
+name: http://localhost:3000/products/3626ade8-0fd8-4da4-94fc-86809b37f208
+description: ""
+url: http://localhost:3000/products/3626ade8-0fd8-4da4-94fc-86809b37f208
+method: GET
+order: 2000
