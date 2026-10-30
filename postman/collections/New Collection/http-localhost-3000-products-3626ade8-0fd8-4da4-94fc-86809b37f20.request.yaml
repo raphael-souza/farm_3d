@@ -1,6 +1,19 @@
 $kind: http-request
 name: http://localhost:3000/products/3626ade8-0fd8-4da4-94fc-86809b37f208
 description: ""
-url: http://localhost:3000/products/3626ade8-0fd8-4da4-94fc-86809b37f208
-method: GET
+url: http://localhost:3000/products/3626ade8-0fd8-4da4-94fc-86809b37f208?name=imagem sagrada familia
+method: PUT
+queryParams:
+  - key: name
+    value: imagem sagrada familia
+    disabled: false
+    description: ""
+body:
+  type: json
+  content: |-
+    {
+        "name": "imagem sagrada familia",
+        "description": "15cm de altura, cor branca e dourado"
+
+    }
 order: 2000

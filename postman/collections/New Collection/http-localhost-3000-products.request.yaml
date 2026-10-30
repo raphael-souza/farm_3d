@@ -1,6 +1,15 @@
 $kind: http-request
 name: http://localhost:3000/products
 description: ""
-url: http://localhost:3000/products
+url: http://localhost:3000/products?limit=10&page=1
 method: GET
+queryParams:
+  - key: limit
+    value: "10"
+    disabled: false
+    description: ""
+  - key: page
+    value: "1"
+    disabled: false
+    description: ""
 order: 1000

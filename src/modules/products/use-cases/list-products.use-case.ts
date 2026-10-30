@@ -6,7 +6,17 @@ export class ListProductsUseCase {
     private readonly productRepository: ProductRepository
   ) {}
 
-  async execute(): Promise<Product[]> {
-    return this.productRepository.findAll();
+  async execute(page: number, limit: number) {
+    const [products, total] = await this.productRepository.findAll(page, limit);
+
+    return {
+      data: products,
+      meta: {
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+      }
+    }
   }
 }

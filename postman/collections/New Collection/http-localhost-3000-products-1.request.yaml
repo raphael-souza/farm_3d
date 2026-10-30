@@ -1,0 +1,14 @@
+$kind: http-request
+name: http://localhost:3000/products
+description: ""
+url: http://localhost:3000/products
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "name": "chaveiro GTA VI",
+        "description": "Tamanho G, cor rosa predominante",
+        "salePrice": "14.00"
+    }
+order: 3000
