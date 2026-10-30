@@ -4,6 +4,7 @@ import "dotenv/config";
 import express from "express";
 import { initializeDatabase } from "./config/initialize-database";
 import productRoutes from "./modules/products/http/product.routes";
+import { errorHandler } from "./shared/http/middlewares/error-handler";
 
 async function bootstrap(): Promise<void> {
   const app = express();
@@ -17,6 +18,8 @@ async function bootstrap(): Promise<void> {
       application: "Farm3D",
     });
   });
+
+  app.use(errorHandler);
 
   app.use(
     (
