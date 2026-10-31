@@ -4,6 +4,7 @@ import { ListProductsUseCase } from "../use-cases/list-products.use-case";
 import { ShowProductUseCase } from "../use-cases/show-product.use-case";
 import { UpdateProductUseCase } from "../use-cases/update-product.use-case";
 import { DeleteProductUseCase } from "../use-cases/delete-product.use-case";
+import { ProductSerializer } from "./product.serializer";
 export class ProductController {
   constructor(
     private readonly createProductUseCase: CreateProductUseCase,
@@ -29,7 +30,10 @@ export class ProductController {
 
     const products = await this.listProductsUseCase.execute(page, limit);
 
-    res.status(200).json(products);
+    res.status(200).json({
+      data: ProductSerializer.serializeCollection(products.data),
+      meta: products.meta
+    });
   }
 
   async show(req: Request, res: Response): Promise<void> {
